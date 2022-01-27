@@ -1,7 +1,10 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
 import {Link} from 'react-router-dom';
 
+
 const Navbar = () => {
+  const amount = useSelector(state => state.amount)
   return (
   <div>
       <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -25,7 +28,7 @@ const Navbar = () => {
         </li>
       </ul>
 
-      <button className="btn-primary">Your Balance: Rs.10,000</button>
+      <button className="btn-primary">Your Balance: Rs.{amount}</button>
       
     </div>
   </div>
